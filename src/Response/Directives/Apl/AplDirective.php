@@ -38,7 +38,8 @@ class AplDirective extends Directive
         $renderAplDirective->version     = self::VERSION;
 
         $renderAplDirective->token = $token;
-        $renderAplDirective->document = $document;
+        $renderAplDirective->document = is_string($document) ? json_decode(file_get_contents($document), true) : $document;
+        $renderAplDirective->datasources = is_string($datasources) ? json_decode(file_get_contents($datasources), true) : $datasources;
         $renderAplDirective->datasources = $datasources;
 
         return $renderAplDirective;

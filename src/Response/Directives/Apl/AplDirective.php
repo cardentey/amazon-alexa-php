@@ -30,7 +30,7 @@ class AplDirective extends Directive
      *
      * @return RenderAplDirective
      */
-    public static function create($token, Array $document, Array $datasources): self
+    public static function create($token, $document, $datasources): self
     {
         $renderAplDirective = new self();
 
